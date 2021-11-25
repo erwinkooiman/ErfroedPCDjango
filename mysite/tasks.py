@@ -609,7 +609,7 @@ def write_value_Meetstraat(obj):
 
 
 #update values  
-#deze functies worden aangeroepen door datachange subhandler
+#deze functies worden aangeroepen door datachange
 def update_value_Doseerpomp(nodeid, data):                         
     rDoseerpomp = DoseerPomp.objects.filter(handlername = nodeid)   #haal database object op
     for idx, dos in enumerate(rDoseerpomp):                         #voor alle doseerpompen in node
@@ -889,3 +889,4 @@ def Start():                #kan gebruikt worden om te verbinden met opcua en su
     s.subscribe()
 
 
+#dit is een test voor github
