@@ -888,5 +888,3 @@ def Start():                #kan gebruikt worden om te verbinden met opcua en su
     connectopcua()
     s.subscribe()
 
-
-#dit is een test voor github
