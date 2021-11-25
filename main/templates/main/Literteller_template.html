@@ -1,0 +1,19 @@
+{% extends "main/Base.html" %}
+
+{% block title %} {{obj.name}} {% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<h1> {{obj.name}} </h1>
+
+<form method="post" action= "#">
+    {% csrf_token %}
+
+    {{ form|crispy }}
+    <br>
+    <button type="submit" , name="WriteValues" , value="WriteValues", class="btn btn-success">Write Values</button>
+    <button type="submit" , name="GetValues" , value="GetValues", class="btn btn-success">Read Values</button>
+</form>
+
+{% endblock %}

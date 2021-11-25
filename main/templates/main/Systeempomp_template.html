@@ -1,0 +1,32 @@
+{% extends "main/Base.html" %}
+
+{% block title %} {{obj.name}} {% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<form method="post" action= "#">
+    <div class="row">
+        <div class="col-6">
+            <h3> {{obj.name}} </h3>
+            {% csrf_token %}
+            {{ form|crispy }}
+            <br>
+            <br>
+            <h3>{{FDCobj.name}}</h3>
+            {{ form3|crispy }}
+        </div>
+        <div class="col-6">
+            <h3>{{FDSobj.name}}</h3>
+            {{ form2|crispy }}
+            
+        </div>
+    </div>
+    <br>
+    <button type="submit" , name="WriteValues" , value="WriteValues", class="btn btn-success">Write Values</button>
+    <button type="submit" , name="GetValues" , value="GetValues", class="btn btn-success">Read Values</button>
+</form>
+
+
+{% endblock %}

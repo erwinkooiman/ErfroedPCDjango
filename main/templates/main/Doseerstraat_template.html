@@ -1,0 +1,25 @@
+{% extends "main/Base.html" %}
+{% block title %} {{obj.name}} {% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<h1> {{obj.name}} </h1>
+
+<form method="post" action= "#">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-6">
+            {{ form|crispy }}
+        </div>
+        <div class="col-6">
+            {% for sv in form2 %}
+                {{sv|crispy}}
+            {% endfor %}
+        </div>
+    </div>
+    
+    <button type="submit" , name="WriteValues" , value="WriteValues", class="btn btn-success">Write Values</button>
+    <button type="submit" , name="GetValues" , value="GetValues", class="btn btn-success">Read Values</button>
+</form>
+{% endblock %} 
